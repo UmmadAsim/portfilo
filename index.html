@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ummad Asim Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<style>
+  body { scroll-behavior: smooth; background-color: #0f0f0f; color: #f0f0f0; }
+  .fade-in { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
+  .fade-in.show { opacity: 1; transform: translateY(0); }
+
+  /* Hero Gradient Text */
+  .animate-gradient {
+    background: linear-gradient(90deg, #ff5f6d, #ffc371, #24c6dc, #514a9d);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 6s ease infinite;
+  }
+  @keyframes gradientMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  /* Glowing circles */
+  .animate-pulse-slow { animation: pulse 10s ease-in-out infinite alternate; }
+</style>
+</head>
+<body class="font-sans">
+
+<!-- Navbar -->
+<nav class="fixed w-full bg-gray-900 bg-opacity-95 shadow-md z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-xl font-bold text-pink-500">Ummad Asim</h1>
+    
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex space-x-6">
+      <a href="#home" class="hover:text-pink-500">Home</a>
+      <a href="#about" class="hover:text-pink-500">About</a>
+      <a href="#skills" class="hover:text-pink-500">Skills</a>
+      <a href="#projects" class="hover:text-pink-500">Projects</a>
+      <a href="#contact" class="hover:text-pink-500">Contact</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="text-white focus:outline-none">
+        <i class="ri-menu-line text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden bg-gray-900 w-full text-center md:hidden">
+    <a href="#home" class="block py-3 hover:bg-gray-800">Home</a>
+    <a href="#about" class="block py-3 hover:bg-gray-800">About</a>
+    <a href="#skills" class="block py-3 hover:bg-gray-800">Skills</a>
+    <a href="#projects" class="block py-3 hover:bg-gray-800">Projects</a>
+    <a href="#contact" class="block py-3 hover:bg-gray-800">Contact</a>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+</script>
+
+<!-- Hero Section -->
+<section id="home" class="relative bg-black min-h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+  <div class="absolute top-0 left-0 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse-slow"></div>
+  <div class="absolute top-20 right-0 w-64 h-64 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-60 animate-pulse-slow"></div>
+  <div class="absolute bottom-10 left-20 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-pulse-slow"></div>
+
+  <img src="image/ummadasim.png" alt="Ummad Asim" class="w-32 md:w-40 h-32 md:h-40 rounded-full border-4 border-white mb-4 md:mb-6 shadow-lg animate__animated animate__fadeInDown relative z-10">
+  <h2 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-2 md:mb-4 bg-clip-text text-transparent animate-gradient relative z-10 animate__animated animate__fadeInDown">
+    Hi, I'm Ummad Asim
+  </h2>
+  <h3 class="text-lg md:text-2xl mb-4 md:mb-6 animate__animated animate__fadeInUp relative z-10">
+    <span id="typed"></span>
+  </h3>
+  <a href="#contact" class="bg-pink-500 text-white px-6 md:px-8 py-2 md:py-4 rounded-full font-semibold hover:bg-pink-600 transition transform hover:scale-105 animate__animated animate__fadeInUp relative z-10">Hire Me</a>
+</section>
+
+<script>
+  var typed = new Typed('#typed', {
+    strings: ['Full Stack Developer', 'React & Tailwind CSS Expert', 'Creative Web Designer'],
+    typeSpeed: 60,
+    backSpeed: 40,
+    loop: true
+  });
+</script>
+
+<!-- About Section -->
+<section id="about" class="max-w-5xl mx-auto py-16 md:py-20 px-4 text-center bg-gray-900 rounded-xl mx-2 md:mx-0">
+  <h3 class="text-2xl md:text-3xl font-bold mb-8 md:mb-10 text-pink-500 fade-in">About Me</h3>
+  <div class="flex flex-col md:flex-row items-center md:space-x-10 fade-in">
+    <img src="/image/ummd.png" alt="Profile" class="w-32 md:w-48 h-32 md:h-48 rounded-full border-4 border-pink-500 mb-4 md:mb-0 shadow-lg hover:scale-105 transition-transform duration-500">
+    <p class="text-gray-300 text-base md:text-lg md:text-left">
+      I'm a passionate Full Stack Developer specializing in modern, responsive web applications. I love creating professional, interactive websites using React, Tailwind CSS, HTML, and JavaScript. Always learning, always improving!
+    </p>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="py-16 md:py-20 px-4">
+  <h3 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-purple-500 fade-in">Skills</h3>
+  <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow hover:scale-105 transition-transform duration-500 fade-in">
+      <h4 class="font-bold text-pink-500 mb-1 md:mb-2">HTML</h4>
+      <p class="text-sm md:text-base">Semantic & Clean Code</p>
+    </div>
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow hover:scale-105 transition-transform duration-500 fade-in">
+      <h4 class="font-bold text-pink-500 mb-1 md:mb-2">CSS</h4>
+      <p class="text-sm md:text-base">Responsive & Modern Layouts</p>
+    </div>
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow hover:scale-105 transition-transform duration-500 fade-in">
+      <h4 class="font-bold text-pink-500 mb-1 md:mb-2">JavaScript</h4>
+      <p class="text-sm md:text-base">Interactive & Dynamic UI</p>
+    </div>
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow hover:scale-105 transition-transform duration-500 fade-in">
+      <h4 class="font-bold text-pink-500 mb-1 md:mb-2">React</h4>
+      <p class="text-sm md:text-base">Modern SPA Development</p>
+    </div>
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow hover:scale-105 transition-transform duration-500 fade-in">
+      <h4 class="font-bold text-pink-500 mb-1 md:mb-2">Tailwind CSS</h4>
+      <p class="text-sm md:text-base">Responsive & Modern Design</p>
+    </div>
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow hover:scale-105 transition-transform duration-500 fade-in">
+      <h4 class="font-bold text-pink-500 mb-1 md:mb-2">Node.js</h4>
+      <p class="text-sm md:text-base">Backend API Development</p>
+    </div>
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow hover:scale-105 transition-transform duration-500 fade-in">
+      <h4 class="font-bold text-pink-500 mb-1 md:mb-2">MongoDB</h4>
+      <p class="text-sm md:text-base">Database Management</p>
+    </div>
+    <div class="bg-gray-800 p-4 md:p-6 rounded-xl shadow hover:scale-105 transition-transform duration-500 fade-in">
+      <h4 class="font-bold text-pink-500 mb-1 md:mb-2">Git</h4>
+      <p class="text-sm md:text-base">Version Control</p>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="max-w-6xl mx-auto py-16 md:py-20 px-4 text-center">
+  <h3 class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-pink-500 fade-in">Projects</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+    <div class="bg-gray-800 rounded-xl shadow-lg p-4 md:p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl fade-in">
+      <img src="https://via.placeholder.com/300x200" alt="Portfolio" class="rounded mb-4">
+      <h4 class="font-bold mb-2 text-pink-500">Portfolio Website</h4>
+      <p class="text-gray-300 text-sm md:text-base">Professional portfolio built with React & Tailwind CSS.</p>
+      <a href="#" class="text-purple-500 hover:underline mt-2 block">View Project</a>
+    </div>
+    <div class="bg-gray-800 rounded-xl shadow-lg p-4 md:p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl fade-in">
+      <img src="https://via.placeholder.com/300x200" alt="E-commerce" class="rounded mb-4">
+      <h4 class="font-bold mb-2 text-pink-500">E-Commerce App</h4>
+      <p class="text-gray-300 text-sm md:text-base">Full-featured e-commerce application with shopping cart.</p>
+      <a href="#" class="text-purple-500 hover:underline mt-2 block">View Project</a>
+    </div>
+    <div class="bg-gray-800 rounded-xl shadow-lg p-4 md:p-6 transform transition duration-500 hover:scale-105 hover:shadow-2xl fade-in">
+      <img src="https://via.placeholder.com/300x200" alt="Todo App" class="rounded mb-4">
+      <h4 class="font-bold mb-2 text-pink-500">Todo App</h4>
+      <p class="text-gray-300 text-sm md:text-base">Interactive Todo app with local storage and React functionality.</p>
+      <a href="#" class="text-purple-500 hover:underline mt-2 block">View Project</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="bg-gradient-to-r from-indigo-800 via-purple-700 to-pink-600 text-white py-16 md:py-20 px-4 text-center rounded-xl mx-2 md:mx-0 shadow-lg">
+  <h3 class="text-2xl md:text-3xl font-bold mb-4 md:mb-6 fade-in">Contact Me</h3>
+  <p class="mb-4 md:mb-6 fade-in text-gray-200 text-sm md:text-base">Looking to work together? Reach out to me!</p>
+  
+  <a href="mailto:ummadasim@gmail.com" class="bg-pink-500 text-white px-6 md:px-8 py-2 md:py-4 rounded-full font-semibold hover:bg-pink-600 transition transform hover:scale-105 fade-in">
+    Send Email
+  </a>
+  
+  <div class="flex justify-center space-x-4 md:space-x-6 mt-4 md:mt-6 fade-in">
+    <a href="#" class="hover:text-gray-200 transition"><i class="ri-github-fill text-xl md:text-2xl"></i></a>
+    <a href="#" class="hover:text-gray-200 transition"><i class="ri-linkedin-fill text-xl md:text-2xl"></i></a>
+    <a href="#" class="hover:text-gray-200 transition"><i class="ri-twitter-fill text-xl md:text-2xl"></i></a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-center py-6 mt-10 text-gray-400 text-sm md:text-base">
+  &copy; 2026 Ummad Asim. All rights reserved.
+</footer>
+
+<script>
+  // Fade-in animation on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2 };
+  const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('show');
+      appearOnScroll.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
